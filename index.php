@@ -45,6 +45,9 @@ if (isset($_POST['submitbutton-mac'])) {
     if ($serverChoose == 2) {
         $serverChoose = "daten.local";
     }
+    if ($serverChoose == 3) {
+        $serverChoose = "fotoserver.local";
+    }
 
     $check = strcmp($result, $fehler);
     //  print_r($check);
@@ -84,7 +87,7 @@ if (isset($_POST['submitbutton-win'])) {
     $str_arr = explode("\\", $string);
     // print_r($str_arr);
 
-    if ((array_search('office.local', $str_arr)) or (array_search('daten.local', $str_arr))) {
+    if ((array_search('office.local', $str_arr)) or (array_search('daten.local', $str_arr)) or (array_search('fotoserver.local', $str_arr))) {
         
         //checks of user input -> path-format
         if ($pathFormat == 1) {
@@ -142,6 +145,7 @@ if (isset($_POST['submitbutton-win'])) {
                     <select multiple class="form-control col-sm-10" id="server-choose" name="server-choose" required>
                         <option value="1">-- OFFICE --</option>
                         <option value="2">-- DATEN --</option>
+                        <option value="3">-- FOTOSERVER --</option>
                     </select>
                 </div>
 
